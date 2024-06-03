@@ -19,6 +19,7 @@ struct Landmark: Decodable, Identifiable {
     let park: String
     private let coordinates: Coordinates
     private let imageName: String
+    var isFavorite: Bool
     
     // 只读属性
     var locationCoordinate: CLLocationCoordinate2D {
