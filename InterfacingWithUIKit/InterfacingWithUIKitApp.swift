@@ -11,7 +11,11 @@ import SwiftUI
 struct InterfacingWithUIKitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(ModelData())
         }
+        
+        #if os(watchOS)
+        WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
+        #endif
     }
 }
